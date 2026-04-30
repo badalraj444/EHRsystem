@@ -46,7 +46,8 @@ x-tessera-def: &tessera-def
     start_period: 5s
 
 x-blockscout-ref: &blockscout-def
-  image: consensys/blockscout:v4.1.5-beta
+  # image: consensys/blockscout:v4.1.5-beta
+  image: blockscout/blockscout:latest
   container_name: blockscout
   restart: "no"
   environment:
@@ -79,7 +80,7 @@ x-blockscout-ref: &blockscout-def
     - 26000:4000
 
 x-blockscoutpostgres-ref: &blockscoutpostgres-def
-  image: postgres:13.6-alpine
+  image: postgres:13.6-alpine  
   restart: "on-failure"
   container_name: blockscoutpostgres
   environment:
